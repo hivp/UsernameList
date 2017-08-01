@@ -1,0 +1,31 @@
+package com.company.usercheck.util;
+
+import javax.annotation.PostConstruct;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
+import org.springframework.stereotype.Component;
+
+/**
+ * Access static to Context
+ * @author hugo
+ *
+ */
+@Component
+public class StaticContextAccessor {
+
+    private static StaticContextAccessor instance;
+
+    @Autowired
+    private ApplicationContext appContext;
+
+    @PostConstruct
+    public void registerInstance() {
+        instance = this;
+    }
+
+    public static <T> T getBean(Class<T> clazz) {
+        return instance.appContext.getBean(clazz);
+    }
+
+}

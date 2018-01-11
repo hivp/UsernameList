@@ -1,4 +1,4 @@
-# Codo Test sample
+# Code Test sample
 "Username List" is an example of code test that companies send to evaluate candidates.
 The code is an example to resolve the problem.
 
